@@ -1,5 +1,5 @@
 /**
- * Essa's Solar — contact form → Resend email Worker (Cloudflare)
+ * Sisoko Renewables — contact form → Resend email Worker (Cloudflare)
  *
  * Receives a JSON POST from the website contact form and sends a
  * notification email via Resend. The RESEND_API_KEY is stored as an
@@ -56,7 +56,7 @@ export default {
     const message = (data.message || "").toString().trim();
 
     const TO = env.TO_EMAIL || "stayez.j@gmail.com";
-    const FROM = env.FROM_EMAIL || "Essa's Solar Website <onboarding@resend.dev>";
+    const FROM = env.FROM_EMAIL || "Sisoko Renewables Website <onboarding@resend.dev>";
 
     const rows = [
       ["Name", name], ["Company", company || "—"], ["Email", email],
@@ -65,7 +65,7 @@ export default {
 
     const html = `<div style="max-width:560px;margin:auto;font-family:system-ui,Segoe UI,Arial,sans-serif;color:#17150f">
       <div style="border-left:3px solid #caa24b;padding:2px 0 2px 14px;margin-bottom:20px">
-        <div style="letter-spacing:.18em;font-size:11px;color:#95711f;font-weight:700">ESSA'S SOLAR — NEW LEAD</div>
+        <div style="letter-spacing:.18em;font-size:11px;color:#95711f;font-weight:700">SISOKO RENEWABLES — NEW LEAD</div>
         <div style="font-size:20px;font-weight:700;margin-top:4px">New consultation request</div>
       </div>
       <table style="border-collapse:collapse;margin-bottom:18px">${rows}</table>
@@ -74,7 +74,7 @@ export default {
       <div style="margin-top:22px;color:#9a988f;font-size:12px">Sent from the sisokorenewables.com contact form.</div>
     </div>`;
 
-    const text = `New consultation request from the Essa's Solar website:
+    const text = `New consultation request from the Sisoko Renewables website:
 
 Name: ${name}
 Company: ${company || "—"}

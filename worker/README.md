@@ -1,4 +1,4 @@
-# Essa's Solar — contact form email Worker
+# Sisoko Renewables — contact form email Worker
 
 Sends contact-form submissions to **stayez.j@gmail.com** via Resend.
 The site works without this (it falls back to a pre-filled email); deploying
@@ -36,7 +36,7 @@ pre-filled email if the endpoint is ever unreachable.
 
 Resend requires the `from` domain to be verified in your Resend account.
 - Quickest: verify **sisokorenewables.com** in Resend (DNS is on Cloudflare), then
-  set `FROM_EMAIL = "Essa's Solar <leads@sisokorenewables.com>"` in `wrangler.toml`.
+  set `FROM_EMAIL = "Sisoko Renewables <leads@sisokorenewables.com>"` in `wrangler.toml`.
 - Or reuse an already-verified domain you own.
 - The default `onboarding@resend.dev` only delivers to your own Resend account email —
   fine for a first test, not for production.

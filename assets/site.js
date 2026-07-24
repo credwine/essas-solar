@@ -1,4 +1,4 @@
-/* Essa's Solar — shared behavior */
+/* Sisoko Renewables — shared behavior */
 (function () {
   var menuBtn = document.getElementById('menuBtn');
   var navLinks = document.getElementById('navLinks');
@@ -82,7 +82,7 @@
 
       function fallbackToMail() {
         var lines = [
-          'New consultation request from the Essa’s Solar website:', '',
+          'New consultation request from the Sisoko Renewables website:', '',
           'Name: ' + (payload.name || '—'),
           'Company: ' + (payload.company || '—'),
           'Email: ' + (payload.email || '—'),
@@ -91,7 +91,7 @@
           'Project details:', (payload.message || '—')
         ];
         var mailto = 'mailto:stayez.j@gmail.com'
-          + '?subject=' + encodeURIComponent('Solar inspection inquiry' + (payload.name ? ' — ' + payload.name : ''))
+          + '?subject=' + encodeURIComponent('Solar inspection inquiry' + (payload.name ? ': ' + payload.name : ''))
           + '&body=' + encodeURIComponent(lines.join('\n'));
         if (ok) { ok.style.display = 'block'; }
         if (btn) { btn.textContent = 'Opening your email…'; }
@@ -100,7 +100,7 @@
 
       function showSent() {
         if (ok) {
-          ok.textContent = 'Thank you — your request has been sent to our team. We’ll be in touch shortly, usually within one business day.';
+          ok.textContent = 'Thank you. Your request has been sent to our team and we will be in touch shortly.';
           ok.style.display = 'block';
         }
         if (btn) { btn.textContent = 'Request sent ✓'; btn.disabled = true; }

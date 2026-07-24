@@ -1,5 +1,5 @@
 /* =====================================================================
-   Essa's Solar Expertise Services — shared stylesheet
+   Sisoko Renewables — shared stylesheet
    Premium solar quality & inspection consulting · Columbus, Ohio
    ===================================================================== */
 
@@ -54,6 +54,17 @@ body::before {
 a { color: inherit; text-decoration: none; }
 button, input, textarea, select { font: inherit; }
 img, svg { display: block; max-width: 100%; }
+
+/* ---------- Themed scrollbar ---------- */
+* { scrollbar-width: thin; scrollbar-color: var(--gold-deep) rgba(20,20,18,.9); }
+::-webkit-scrollbar { width: 12px; height: 12px; }
+::-webkit-scrollbar-track { background: #141412; }
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--gold), var(--gold-deep));
+  border-radius: 999px; border: 3px solid #141412;
+}
+::-webkit-scrollbar-thumb:hover { background: var(--gold-bright); }
+::-webkit-scrollbar-corner { background: #141412; }
 
 .container { width: min(1180px, calc(100% - 40px)); margin-inline: auto; }
 .section { padding: 110px 0; }
@@ -399,7 +410,7 @@ nav.site-nav {
 .cta-section { padding:100px 0 120px; }
 .cta-card { border-radius:30px; overflow:hidden; display:grid; grid-template-columns:.95fr 1.05fr; background:linear-gradient(145deg, #2c2a24, #1e1e1b); border:1px solid rgba(225,192,107,.2); box-shadow:var(--shadow); }
 .cta-copy { padding:56px; position:relative; }
-.cta-copy::after { content:"ESSA'S"; position:absolute; bottom:-38px; left:44px; font-family:var(--serif); font-size:7.5rem; color:rgba(225,192,107,.035); white-space:nowrap; }
+.cta-copy::after { content:"SISOKO"; position:absolute; bottom:-38px; left:44px; font-family:var(--serif); font-size:7.5rem; color:rgba(225,192,107,.035); white-space:nowrap; }
 .cta-copy h2 { font-size:clamp(2.6rem,4.5vw,4.2rem); }
 .cta-copy p { max-width:500px; }
 .contact-form { background:var(--paper); color:var(--ink); padding:42px; }
@@ -414,6 +425,45 @@ textarea { min-height:116px; resize:vertical; }
 .hp { position:absolute; left:-9999px; width:1px; height:1px; overflow:hidden; }
 .form-note { font-size:.71rem; color:#7e7b72; margin:12px 0 0; }
 .form-success { display:none; margin-top:12px; padding:12px 14px; border:1px solid rgba(145,109,30,.25); background:rgba(202,162,75,.10); border-radius:10px; font-size:.8rem; color:#5f491b; }
+
+/* ---------- Sample report ---------- */
+.report-doc { background: var(--paper); color: var(--ink); border-radius: var(--radius); padding: 46px; box-shadow: var(--shadow); border:1px solid rgba(225,192,107,.25); }
+.report-head { display:flex; justify-content:space-between; align-items:flex-start; gap:24px; flex-wrap:wrap; border-bottom:1px solid #d8cfbb; padding-bottom:24px; margin-bottom:26px; }
+.report-head h2 { color:var(--ink); font-size:1.9rem; }
+.report-head .sub { color:#77746b; font-size:.86rem; margin-top:6px; }
+.report-badge { display:inline-block; background:#95711f; color:#fff; font-size:.66rem; letter-spacing:.16em; text-transform:uppercase; padding:6px 12px; border-radius:999px; font-weight:800; }
+.report-meta { display:grid; grid-template-columns:repeat(4,1fr); gap:16px; margin-bottom:28px; }
+.report-meta div { background:rgba(255,255,255,.5); border:1px solid #e2d8c2; border-radius:12px; padding:14px; }
+.report-meta b { display:block; font-size:.64rem; letter-spacing:.12em; text-transform:uppercase; color:#8a7a52; margin-bottom:6px; }
+.report-meta span { font-family:var(--serif); font-size:1.15rem; color:var(--ink); }
+.disposition { display:flex; align-items:center; gap:16px; background:rgba(202,162,75,.12); border:1px solid rgba(149,109,30,.3); border-radius:14px; padding:18px 22px; margin-bottom:28px; }
+.disposition .pill { background:#95711f; color:#fff; font-weight:800; padding:8px 16px; border-radius:999px; font-size:.82rem; letter-spacing:.04em; white-space:nowrap; }
+.disposition p { margin:0; color:#5e5850; font-size:.9rem; }
+.report-doc h3 { color:var(--ink); font-size:1.15rem; margin:30px 0 14px; }
+.report-doc figure { margin:0; }
+.report-doc figure img { width:100%; border-radius:12px; border:1px solid #d8cfbb; }
+.report-doc figcaption { color:#8a857a; font-size:.76rem; margin-top:8px; }
+table.data { width:100%; border-collapse:collapse; font-size:.86rem; }
+table.data th { text-align:left; color:#8a7a52; font-size:.66rem; letter-spacing:.1em; text-transform:uppercase; padding:10px 12px; border-bottom:2px solid #d8cfbb; }
+table.data td { padding:11px 12px; border-bottom:1px solid #e6ddca; color:#33302a; }
+table.data tr:last-child td { border-bottom:0; }
+.num { font-variant-numeric: tabular-nums; }
+.sev { padding:3px 10px; border-radius:999px; font-size:.64rem; font-weight:800; letter-spacing:.04em; white-space:nowrap; }
+.sev.crit { background:#7a1f1f; color:#fff; }
+.sev.major { background:#b23b3b; color:#fff; }
+.sev.minor { background:#caa24b; color:#241a06; }
+.sev.ok { background:#3f6b3f; color:#fff; }
+.report-scroll { overflow-x:auto; }
+@media (max-width:780px){ .report-meta{grid-template-columns:1fr 1fr;} .report-doc{padding:26px;} }
+
+/* ---------- Founder ---------- */
+.founder-grid { display:grid; grid-template-columns:.8fr 1.2fr; gap:56px; align-items:center; }
+.founder-figure { border-radius:var(--radius); overflow:hidden; border:1px solid rgba(225,192,107,.2); box-shadow:var(--shadow); aspect-ratio:4/5; }
+.founder-figure img { width:100%; height:100%; object-fit:cover; object-position:center 20%; }
+.founder-quote { font-family:var(--serif); font-size:clamp(1.5rem,2.6vw,2.2rem); line-height:1.25; color:#efe9db; margin:0 0 22px; }
+.founder-name { color:var(--gold-bright); font-weight:700; }
+.founder-name span { display:block; color:#9f9e98; font-weight:400; font-size:.82rem; margin-top:4px; letter-spacing:.04em; }
+@media (max-width:900px){ .founder-grid{grid-template-columns:1fr; gap:32px;} .founder-figure{max-height:520px;} }
 
 /* ---------- Footer ---------- */
 footer { padding:56px 0 42px; border-top:1px solid rgba(231,223,207,.08); color:#77756f; font-size:.72rem; margin-top:20px; }
