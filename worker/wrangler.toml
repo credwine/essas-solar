@@ -1,0 +1,12 @@
+name = "essas-solar-contact"
+main = "index.js"
+compatibility_date = "2024-11-01"
+
+# Optional overrides (defaults live in index.js):
+#   TO_EMAIL   = "stayez.j@gmail.com"
+#   FROM_EMAIL = "Essa's Solar <leads@yourverifieddomain.com>"
+[vars]
+TO_EMAIL = "stayez.j@gmail.com"
+
+# RESEND_API_KEY is set as an encrypted secret, NOT here:
+#   npx wrangler secret put RESEND_API_KEY
