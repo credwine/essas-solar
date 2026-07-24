@@ -32,9 +32,35 @@
   if (form) {
     form.addEventListener('submit', function (e) {
       e.preventDefault();
+      if (typeof form.reportValidity === 'function' && !form.reportValidity()) { return; }
+
+      var v = function (id) { var el = document.getElementById(id); return el ? el.value.trim() : ''; };
+      var name = v('name'), company = v('company'), email = v('email'),
+          phone = v('phone'), service = v('service'), message = v('message');
+
+      var subject = 'Solar inspection inquiry' + (name ? ' — ' + name : '');
+      var lines = [
+        'New consultation request from the Essa’s Solar website:',
+        '',
+        'Name: ' + (name || '—'),
+        'Company: ' + (company || '—'),
+        'Email: ' + (email || '—'),
+        'Phone: ' + (phone || '—'),
+        'Primary need: ' + (service || '—'),
+        '',
+        'Project details:',
+        (message || '—')
+      ];
+      var mailto = 'mailto:stayez.j@gmail.com'
+        + '?subject=' + encodeURIComponent(subject)
+        + '&body=' + encodeURIComponent(lines.join('\n'));
+
       var ok = document.getElementById('formSuccess');
       if (ok) { ok.style.display = 'block'; }
-      form.querySelector('button[type="submit"]').textContent = 'Request sent';
+      var btn = form.querySelector('button[type="submit"]');
+      if (btn) { btn.textContent = 'Opening your email…'; }
+
+      window.location.href = mailto;
     });
   }
 
