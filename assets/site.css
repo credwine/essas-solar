@@ -114,6 +114,7 @@ nav.site-nav {
   font-family: var(--serif); font-size: 1.15rem; flex-shrink: 0;
 }
 .brand-mark::after { content: ""; position: absolute; inset: -5px; border: 1px solid rgba(202,162,75,.12); border-radius: 50%; }
+.brand-mark-img { width: 44px; height: 44px; object-fit: contain; flex-shrink: 0; filter: drop-shadow(0 2px 8px rgba(202,162,75,.25)); }
 .brand-copy { line-height: 1.05; }
 .brand-copy span { font-size: .96rem; }
 .brand-copy small { display: block; color: #9f9e98; font-size: .58rem; letter-spacing: .18em; text-transform: uppercase; margin-top: 4px; }
