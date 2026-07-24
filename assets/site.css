@@ -282,32 +282,34 @@ nav.site-nav {
 .principle strong { display:block; margin-bottom:10px; color:#eee8da; }
 .principle p { font-size:.86rem; margin:0; }
 
-/* ---------- Full-width quote band ---------- */
+/* ---------- Full-width cinematic band ---------- */
 .quote-band {
-  position: relative; padding: 120px 0; overflow: hidden; isolation: isolate;
-  background: #0f0f0d;
+  position: relative; min-height: 62vh; display: flex; align-items: flex-end;
+  padding: 60px 0 64px; overflow: hidden; isolation: isolate; background: #0f0f0d;
 }
 .quote-band .bandbg {
   position: absolute; inset: 0; z-index: 0;
   background-image: url("band.webp");
   background-size: cover; background-position: center;
   background-attachment: fixed;
-  filter: brightness(.5) saturate(1.05);
 }
 .quote-band::after {
   content: ""; position: absolute; inset: 0; z-index: 1;
   background:
-    radial-gradient(circle at 20% 40%, rgba(202,162,75,.18), transparent 40%),
-    linear-gradient(90deg, rgba(12,12,11,.86), rgba(12,12,11,.5) 70%, rgba(12,12,11,.7));
+    linear-gradient(180deg, rgba(12,12,11,.5) 0%, rgba(12,12,11,.12) 30%, rgba(12,12,11,.72) 82%, rgba(12,12,11,.94) 100%);
 }
 .quote-band .container { position: relative; z-index: 2; }
 .quote-lead {
   font-family: var(--serif); font-weight: 500; letter-spacing: -.01em;
-  font-size: clamp(1.8rem, 3.6vw, 3.4rem); line-height: 1.14; max-width: 900px;
-  color: #f3edde; margin: 14px 0 0;
+  font-size: clamp(1.7rem, 3.4vw, 3.2rem); line-height: 1.16; max-width: 860px;
+  color: #f3edde; margin: 14px 0 0; text-shadow: 0 2px 30px rgba(0,0,0,.5);
 }
 .quote-lead .gold-text { display: inline; }
-.quote-attrib { margin-top: 26px; color: #cdbf9f; font-size: .82rem; letter-spacing: .1em; text-transform: uppercase; }
+.quote-attrib { margin-top: 22px; color: #cdbf9f; font-size: .82rem; letter-spacing: .1em; text-transform: uppercase; }
+@media (max-width: 640px) {
+  .quote-band { min-height: 70vh; }
+  .quote-band .bandbg { background-attachment: scroll; }
+}
 
 /* ---------- About portrait band ---------- */
 .portrait-figure {
